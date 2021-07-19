@@ -1,6 +1,7 @@
-name: pyrnotebooks_hpc_ml
+name: pyrnotebook_hpc_ml_intro
 
 channels:
+
   - conda-forge
   - conda 
   - pytorch
@@ -9,11 +10,15 @@ channels:
   - r
 
 dependencies:
-  - pip:
-      - jupyterlab_latex
+
+  - git
+  - gcc_linux-64
+  - jupyter-server-proxy 
+  - ipywidgets
+  - python-graphviz
   - libgcc
-  - gxx_linux-64
-  - numpy
+  - tensorflow
+  - Keras
   - jupyter-vscode-proxy
   - code-server >=3.2
   - mrjob
@@ -30,7 +35,7 @@ dependencies:
   - scikit-learn
   - sklearn-pandas
   - dask
-  - airflow-with-dask
+  - dask-image
   - dask-imread
   - dask_labextension
   - dask-ml
@@ -42,6 +47,7 @@ dependencies:
   - dask-mpi
   - dask-gateway 
   - dask-gateway-server-local
+  - dask-yarn
   - plotly
   - jupyterlab-plotly-extension
   - pandas-datareader
@@ -49,7 +55,6 @@ dependencies:
   - pandocfilters
   - tensorboard
   - tensorboard-plugin-wit
-  - tensorflow
   - tensorflow-datasets
   - tensorflow-estimator
   - tensorflow-hub
@@ -58,7 +63,6 @@ dependencies:
   - torchtext
   - torchvision
   - tornado
-  - Keras
   - Keras-Preprocessing
   - matplotlib                    
   - matplotlib-venn
@@ -124,6 +128,8 @@ dependencies:
   - oauth2client                  
   - oauthlib      
   - pytorch
+  - r-devtools
+  - r-checkpoint
   - r-essentials
   - r-tensorflow
   - r-keras

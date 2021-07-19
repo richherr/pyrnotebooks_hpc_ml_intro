@@ -1,14 +1,27 @@
 #!/bin/bash
 
-Rscript ./binder/install.R
+Rscript binder/Rcpp_install.R
+
+git clone --recursive https://github.com/s-u/unixtools.git unixtools
+R CMD INSTALL unixtools
+
+Rscript binder/install.R
 
 echo "Sys.setenv(LD_LIBRARY_PATH=paste(Sys.getenv('JAVA_HOME'),'/server'))" > /srv/conda/envs/notebook/lib/R/etc/Rprofile.site
+echo "Sys.setenv(RETICULATE_MINICONDA_ENABLED='FALSE')" >> /srv/conda/envs/notebook/lib/R/etc/Rprofile.site
 
 ###############################################################
 #          jupyter/jupyterlab extensions/kernels              #
 ###############################################################
 
 code-server --install-extension ms-python.python
+
+pip install jupyterlab_latex
+pip install tensorflow==2.5.0
+pip install mimesis bokeh
+pip install jupyterlab_latex
+pip install radian
+
 
 ###############################################################
 
@@ -19,6 +32,9 @@ test -e test.png && rm test.png
 
 # install JupyterLab extension
 jupyter labextension install @jupyterlab/latex
+jupyter labextension install dask-labextension
+jupyter serverextension enable --py --sys-prefix dask_labextension
+jupyter labextension install @jupyterlab/server-proxy
 
 # jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build 
 # jupyter labextension install beakerx-jupyterlab --no-build 
