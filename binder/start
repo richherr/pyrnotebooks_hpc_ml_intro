@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${NB_PYTHON_PREFIX}/lib:$JAVA_HOME/server
+exec "$@"
