@@ -1,4 +1,4 @@
-name: pyrnotebook_hpc_ml
+name: pyrnotebooks_hpc_ml
 
 channels:
   - conda-forge
