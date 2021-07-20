@@ -1,8 +1,5 @@
 install.packages("Rcpp", repos="https://cran.microsoft.com/")
-require(unixtools)
-devtools::install_github("sachsmc/ggkm")
-devtools::install_github("benjaminrich/table1")
-devtools::install_github("slowkow/ggrepel")
+install.packages("remotes", repos="https://cran.microsoft.com/")
 install.packages("tinytex", repos="https://cran.microsoft.com/")
 tinytex::install_tinytex()
 
@@ -71,7 +68,6 @@ system(paste("rm -rf ", path, sep=""))
 system("mkdir /tmp/new_tmp")
 set.tempdir("/tmp/new_tmp")
 
-install.packages("remotes", repos="https://cran.microsoft.com/")
 install.packages("shiny", repos="https://cran.microsoft.com/")
 install.packages("knitr", repos="https://cran.microsoft.com/")
 

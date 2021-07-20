@@ -5,6 +5,15 @@ Rscript binder/Rcpp_install.R
 git clone --recursive https://github.com/s-u/unixtools.git unixtools
 R CMD INSTALL unixtools
 
+git clone --recursive https://github.com/sachsmc/ggkm.git
+R CMD INSTALL ggkm
+
+git clone --recursive https://github.com/benjaminrich/table1.git
+R CMD INSTALL table1
+
+git clone --recursive https://github.com/slowkow/ggrepel.git
+R CMD INSTALL ggrepel
+
 Rscript binder/install.R
 
 echo "Sys.setenv(LD_LIBRARY_PATH=paste(Sys.getenv('JAVA_HOME'),'/server'))" > /srv/conda/envs/notebook/lib/R/etc/Rprofile.site
@@ -21,6 +30,7 @@ pip install tensorflow==2.5.0
 pip install mimesis bokeh
 pip install jupyterlab_latex
 pip install radian
+pip install tpot
 
 
 ###############################################################
